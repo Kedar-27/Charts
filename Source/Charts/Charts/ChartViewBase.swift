@@ -175,7 +175,7 @@ open class ChartViewBase: NSUIView, ChartDataProvider, AnimatorDelegate
         removeObserver(self, forKeyPath: "frame")
     }
     
-    internal func initialize()
+    open func initialize()
     {
         #if os(iOS)
             self.backgroundColor = .clear
@@ -484,7 +484,7 @@ open class ChartViewBase: NSUIView, ChartDataProvider, AnimatorDelegate
     // MARK: - Markers
 
     /// draws all MarkerViews on the highlighted positions
-    internal func drawMarkers(context: CGContext)
+    open func drawMarkers(context: CGContext)
     {
         // if there is no marker view or drawing marker is disabled
         guard

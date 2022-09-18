@@ -198,6 +198,8 @@ open class ChartBaseDataSet: NSObject, ChartDataSetProtocol, NSCopying
     /// The axis this DataSet should be plotted against.
     open var axisDependency = YAxis.AxisDependency.left
     
+    open var instrumentId = ""
+    
     /// - Returns: The color at the given index of the DataSet's color array.
     /// This prevents out-of-bounds by performing a modulus on the color index, so colours will repeat themselves.
     open func color(atIndex index: Int) -> NSUIColor

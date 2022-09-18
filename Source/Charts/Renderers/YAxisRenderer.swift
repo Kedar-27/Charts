@@ -349,23 +349,23 @@ open class YAxisRenderer: NSObject, AxisRenderer
             {
             case .rightTop:
                 alignLabel2 = .right
-                pointLabel2 = CGPoint(x: viewPortHandler.contentRight - xOffset,
-                                y: position.y - yOffset)
+                pointLabel2 = CGPoint(x: viewPortHandler.contentRight - xOffsetLabel2,
+                                y: position.y - yOffsetLabel2)
 
             case .rightBottom:
                 alignLabel2 = .right
-                pointLabel2 = CGPoint(x: viewPortHandler.contentRight - xOffset,
-                                y: position.y + yOffset - labelLineHeight)
+                pointLabel2 = CGPoint(x: viewPortHandler.contentRight - xOffsetLabel2,
+                                y: position.y + yOffsetLabel2 - label2LineHeight)
 
             case .leftTop:
                 alignLabel2 = .left
-                pointLabel2 = CGPoint(x: viewPortHandler.contentLeft + xOffset,
-                                y: position.y - yOffset)
+                pointLabel2 = CGPoint(x: viewPortHandler.contentLeft + xOffsetLabel2,
+                                y: position.y - yOffsetLabel2)
 
             case .leftBottom:
                 alignLabel2 = .left
-                pointLabel2 = CGPoint(x: viewPortHandler.contentLeft + xOffset,
-                                y: position.y + yOffset - labelLineHeight)
+                pointLabel2 = CGPoint(x: viewPortHandler.contentLeft + xOffsetLabel2,
+                                y: position.y + yOffsetLabel2 - label2LineHeight)
             }
 
             context.drawText(label2,

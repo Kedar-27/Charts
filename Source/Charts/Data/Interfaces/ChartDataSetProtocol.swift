@@ -267,4 +267,6 @@ public protocol ChartDataSetProtocol
     
     /// `true` if this DataSet is visible inside the chart, or `false` ifit is currently hidden.
     var isVisible: Bool { get }
+    
+    var instrumentId: String { get }
 }

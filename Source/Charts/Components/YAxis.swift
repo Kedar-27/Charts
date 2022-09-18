@@ -186,6 +186,10 @@ open class YAxis: AxisBase
         {
             let bottomSpace = range * Double(spaceBottom)
             _axisMinimum = (min - bottomSpace)
+            if _axisMinimum > _customYMin && _customYMin != 0.0 {
+                _axisMinimum = _customYMin
+            }
+            _axisMinimum -= granularity
         }
         
         // top-space only effects non-custom max
@@ -193,6 +197,11 @@ open class YAxis: AxisBase
         {
             let topSpace = range * Double(spaceTop)
             _axisMaximum = (max + topSpace)
+            if _axisMaximum < _customYMax && _customYMax != 0.0 {
+                _axisMaximum = _customYMax
+            }
+            _axisMaximum += granularity
+
         }
         
         // calc actual range

@@ -209,6 +209,9 @@ open class AxisBase: ComponentBase
     /// and is used when calculating the effective maximum.
     internal var _axisMaximum = Double(0)
     
+    internal var _customYMax = Double(0)
+    internal var _customYMin = Double(0)
+    
     /// the total range of values this axis covers
     @objc open var axisRange = Double(0)
     
@@ -328,6 +331,30 @@ open class AxisBase: ComponentBase
         }
     }
     
+    @objc open var customYMax: Double
+    {
+        get
+        {
+            return _customYMax
+        }
+        set
+        {
+            _customYMax = newValue
+        }
+    }
+    
+    @objc open var customYMin: Double
+    {
+        get
+        {
+            return _customYMin
+        }
+        set
+        {
+            _customYMin = newValue
+        }
+    }
+
     /// Calculates the minimum, maximum and range values of the YAxis with the given minimum and maximum values from the chart data.
     ///
     /// - Parameters:

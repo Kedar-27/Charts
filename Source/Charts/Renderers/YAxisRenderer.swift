@@ -330,6 +330,55 @@ open class YAxisRenderer: NSObject, AxisRenderer
                              at: point,
                              align: align,
                              attributes: [.font: l.valueFont, .foregroundColor: l.valueTextColor])
+            
+            
+            let label2 = l.label2
+            
+            // if drawing the limit-value label is enabled
+            guard l.drawLabelEnabled, !label2.isEmpty else { continue }
+
+            let label2LineHeight = l.valueFont.lineHeight
+
+            let xOffsetLabel2 = 4.0 + l.xOffset
+            let yOffsetLabel2 = l.lineWidth + labelLineHeight + l.yOffset
+
+            let alignLabel2: TextAlignment
+            let pointLabel2: CGPoint
+
+            switch l.label2Position
+            {
+            case .rightTop:
+                alignLabel2 = .right
+                pointLabel2 = CGPoint(x: viewPortHandler.contentRight - xOffset,
+                                y: position.y - yOffset)
+
+            case .rightBottom:
+                alignLabel2 = .right
+                pointLabel2 = CGPoint(x: viewPortHandler.contentRight - xOffset,
+                                y: position.y + yOffset - labelLineHeight)
+
+            case .leftTop:
+                alignLabel2 = .left
+                pointLabel2 = CGPoint(x: viewPortHandler.contentLeft + xOffset,
+                                y: position.y - yOffset)
+
+            case .leftBottom:
+                alignLabel2 = .left
+                pointLabel2 = CGPoint(x: viewPortHandler.contentLeft + xOffset,
+                                y: position.y + yOffset - labelLineHeight)
+            }
+
+            context.drawText(label2,
+                             at: pointLabel2,
+                             align: alignLabel2,
+                             attributes: [.font: l.value2Font, .foregroundColor: l.value2TextColor])
+
+            
+            
+            
+            
+            
+            
         }
     }
 

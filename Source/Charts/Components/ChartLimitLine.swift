@@ -37,9 +37,14 @@ open class ChartLimitLine: ComponentBase
     @objc open var valueTextColor = NSUIColor.labelOrBlack
     @objc open var valueFont = NSUIFont.systemFont(ofSize: 13.0)
     
+    @objc open var value2TextColor = NSUIColor.labelOrBlack
+    @objc open var value2Font = NSUIFont.systemFont(ofSize: 13.0)
+    
     @objc open var drawLabelEnabled = true
     @objc open var label = ""
+    @objc open var label2 = ""
     @objc open var labelPosition = LabelPosition.rightTop
+    @objc open var label2Position = LabelPosition.leftTop
     
     public override init()
     {
@@ -58,6 +63,16 @@ open class ChartLimitLine: ComponentBase
         self.limit = limit
         self.label = label
     }
+    
+    @objc public init(limit: Double, label: String, label2: String)
+    {
+        super.init()
+        self.limit = limit
+        self.label = label
+        self.label2 = label2
+    }
+
+    
     
     /// set the line width of the chart (min = 0.2, max = 12); default 2
     @objc open var lineWidth: CGFloat

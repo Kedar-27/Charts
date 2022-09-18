@@ -135,6 +135,8 @@ open class LineChartRenderer: LineRadarRenderer
             // let the spline start
             cubicPath.move(to: CGPoint(x: CGFloat(cur.x), y: CGFloat(cur.y * phaseY)), transform: valueToPixelMatrix)
             
+            guard _xBounds.range > 0 else{return}
+            
             for j in _xBounds.dropFirst()  // same as firstIndex
             {
                 prevPrev = prev
